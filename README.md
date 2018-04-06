@@ -7,9 +7,16 @@ To start your Phoenix server:
   * Install Node.js dependencies with `cd assets && npm install`
   * Start Phoenix endpoint with `mix phx.server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+# Requisitos e regras de negócio
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+  * Uma conta possui um cliente e n produtos
+  * Um cliente possui código, nome e endereço (cidade e estado)
+  * Um produto possui código, nome e categoria
+  * Uma categoria possui código e nome
+  * Buscar todas as contas de um determinado cliente
+  * Buscar todas as contas com clientes de um determinado estado
+  * Buscar todas as contas com um determinado produto
+  * Buscar todas as contas com produtos de uma determinada categoria
 
 ## Learn more
 
