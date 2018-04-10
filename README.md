@@ -1,5 +1,14 @@
 # Phoenix/Elixir
 
+To install Elixir/Phoenix on Ubuntu
+
+  * `wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb`
+  * `sudo apt-get update`
+  * `sudo apt-get install esl-erlang`
+  * `sudo apt-get install elixir`
+  * `mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez`
+  * `sudo apt-get install inotify-tools` 
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
