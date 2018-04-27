@@ -3,16 +3,10 @@ defmodule Openfriday.Repo.Migrations.CreateContas do
 
   def change do
     create table(:contas) do
-      add :dominio, :string
       add :cliente_id, :integer
-      add :email, :string
+      add :numero, :string
 
       timestamps()
     end
-
-    create unique_index(:contas, [:dominio])
-    create unique_index(:contas, [:cliente_id])
-    create unique_index(:contas, [:email])
-
   end
 end

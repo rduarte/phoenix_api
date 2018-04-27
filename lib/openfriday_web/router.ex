@@ -16,6 +16,10 @@ defmodule OpenfridayWeb.Router do
   scope "/", OpenfridayWeb do
     pipe_through :api
     resources "/contas", ContaController, except: [:new, :edit]
+    resources "/categorias", CategoriaController, except: [:new, :edit]
+    resources "/produtos", ProdutoController, except: [:new, :edit]
+    resources "/clientes", ClienteController, except: [:new, :edit]
+    resources "/estados", EstadoController, except: [:new, :edit]
 
   end
 end
