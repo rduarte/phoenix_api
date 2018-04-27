@@ -1,6 +1,7 @@
 defmodule OpenfridayWeb.ProdutoView do
   use OpenfridayWeb, :view
   alias OpenfridayWeb.ProdutoView
+  alias OpenfridayWeb.CategoriaView
 
   def render("index.json", %{produtos: produtos}) do
     %{produtos: render_many(produtos, ProdutoView, "produto.json")}
@@ -12,6 +13,7 @@ defmodule OpenfridayWeb.ProdutoView do
 
   def render("produto.json", %{produto: produto}) do
     %{id: produto.id,
-      nome: produto.nome}
+      nome: produto.nome
+    }
   end
 end

@@ -87,10 +87,32 @@ conta3 = Openfriday.Repo.insert!(%Openfriday.Api.Conta{
     cliente_id: jao.id
 }) |> Repo.preload(:produtos)
 
-#prod1 = Openfriday.Repo.preload(prod1,:contas)
-#prod2 = Openfriday.Repo.preload(prod2,:contas)
-#prod3 = Openfriday.Repo.preload(prod3,:contas)
-
-
 changeset = Ecto.Changeset.change(prod1) |> Ecto.Changeset.put_assoc(:contas, [conta1])
+Repo.update!(changeset)
+
+changeset = Ecto.Changeset.change(prod2) |> Ecto.Changeset.put_assoc(:contas, [conta1])
+Repo.update!(changeset)
+
+changeset = Ecto.Changeset.change(prod3) |> Ecto.Changeset.put_assoc(:contas, [conta1])
+Repo.update!(changeset)
+
+changeset = Ecto.Changeset.change(prod4) |> Ecto.Changeset.put_assoc(:contas, [conta2])
+Repo.update!(changeset)
+
+changeset = Ecto.Changeset.change(prod5) |> Ecto.Changeset.put_assoc(:contas, [conta2])
+Repo.update!(changeset)
+
+changeset = Ecto.Changeset.change(prod6) |> Ecto.Changeset.put_assoc(:contas, [conta2])
+Repo.update!(changeset)
+
+changeset = Ecto.Changeset.change(prod1) |> Ecto.Changeset.put_assoc(:contas, [conta3])
+Repo.update!(changeset)
+
+changeset = Ecto.Changeset.change(prod3) |> Ecto.Changeset.put_assoc(:contas, [conta3])
+Repo.update!(changeset)
+
+changeset = Ecto.Changeset.change(prod5) |> Ecto.Changeset.put_assoc(:contas, [conta3])
+Repo.update!(changeset)
+
+changeset = Ecto.Changeset.change(prod6) |> Ecto.Changeset.put_assoc(:contas, [conta3])
 Repo.update!(changeset)

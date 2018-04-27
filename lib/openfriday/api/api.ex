@@ -19,7 +19,7 @@ defmodule Openfriday.Api do
   """
   def list_contas do
     contas = Repo.all(Conta)
-    Repo.preload(contas, [:cliente, cliente: :estado])
+    Repo.preload(contas, [:produtos, :cliente, cliente: :estado])
   end
 
   @doc """
@@ -115,7 +115,8 @@ defmodule Openfriday.Api do
 
   """
   def list_categorias do
-    Repo.all(Categoria)
+    categorias = Repo.all(Categoria)
+    Repo.preload(categorias, [:produtos, produtos: :categoria])
   end
 
   @doc """
