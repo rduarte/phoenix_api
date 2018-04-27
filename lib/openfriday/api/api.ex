@@ -36,7 +36,10 @@ defmodule Openfriday.Api do
       ** (Ecto.NoResultsError)
 
   """
-  def get_conta!(id), do: Repo.get!(Conta, id)
+  def get_conta!(id) do
+    conta = Repo.get!(Conta, id)
+    Repo.preload(conta, [:produtos, :cliente, cliente: :estado])
+  end
 
   @doc """
   Creates a conta.
@@ -133,7 +136,10 @@ defmodule Openfriday.Api do
       ** (Ecto.NoResultsError)
 
   """
-  def get_categoria!(id), do: Repo.get!(Categoria, id)
+  def get_categoria!(id) do
+    categoria = Repo.get!(Categoria, id)
+    Repo.preload(categoria, [:produtos, produtos: :categoria])
+  end
 
   @doc """
   Creates a categoria.
@@ -326,7 +332,10 @@ defmodule Openfriday.Api do
       ** (Ecto.NoResultsError)
 
   """
-  def get_cliente!(id), do: Repo.get!(Cliente, id)
+  def get_cliente!(id) do
+    cliente = Repo.get!(Cliente, id)
+    Repo.preload(cliente, :estado)
+  end
 
   @doc """
   Creates a cliente.
@@ -344,6 +353,7 @@ defmodule Openfriday.Api do
     %Cliente{}
     |> Cliente.changeset(attrs)
     |> Repo.insert()
+    
   end
 
   @doc """
